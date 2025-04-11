@@ -1,4 +1,5 @@
 <template>
+  <SectionBanner title="Artistas" imgUrl="/assets/banner.png" imgAltText="Los tatuadores de Ondo Barcelona"/>
   <div class="bg-zinc-900 w-full py-2 md:p-10">
     <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
       <div v-for="artist in artists" :key="artist.id"
@@ -16,6 +17,8 @@
 </template>
 
 <script setup lang="ts">
+import SectionBanner from "./SectionBanner.vue";
+
 const artists = [
   {
     id: 1,
