@@ -1,22 +1,41 @@
+---
+import Navbar from "../components/Navbar.vue";
+import Location from "../components/Location.vue";
+import Banner from "../components/Banner.vue";
+import BannerArtists from "../components/BannerArtists.vue";
+import Artists from "../components/Artists.vue";
+import Info from "../components/Info.vue";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
+    <link href="/src/styles/global.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap"
+          rel="stylesheet">
+    <meta name="generator" content={Astro.generator}/>
+    <title>ONDO TATTOO BARCELONA</title>
+</head>
+<body>
+<Navbar client:load/>
+<Banner/>
+<Info/>
+<BannerArtists/>
+<Artists/>
+<slot/>
+</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
