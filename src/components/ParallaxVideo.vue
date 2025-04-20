@@ -1,7 +1,8 @@
 <!-- src/components/ParallaxVideo.vue -->
 <template>
   <template v-for="video in videos">
-    <div :id="`video-${video.id}`" class="parallax-video-container">
+    <div :id="`video-${video.id}`"
+         :class="`parallax-video-container ${video.isFullscreen ? 'parallax-video-container-fullscreen' : ''}`">
       <video
           :id="`player-${video.id}`"
           :src="video.src"
@@ -33,7 +34,9 @@ const handleScroll = () => {
         if (rect.bottom < 0 || rect.top > window.innerHeight) {
           videoElement.style.transform = `translate3d(0, -100%, 0)`;
         } else {
-          const translateY = Math.round(-distanceFromTop);
+          let translateY = Math.round(-distanceFromTop);
+          console.log(video.id)
+          translateY += video.id === '1' ? 0 : -50;
           videoElement.style.transform = `translate3d(0, ${translateY}px, 0)`;
         }
         const playerTranslateY = Math.round(distanceFromTop * 0.8);
@@ -54,15 +57,18 @@ onUnmounted(() => {
 const videos = [
   {
     src: '/assets/ondo1.mov',
-    id: '1'
+    id: '1',
+    isFullscreen: true
   },
   {
     src: '/assets/ondo2.mov',
-    id: '2'
+    id: '2',
+    isFullscreen: false
   },
   {
     src: '/assets/ondo3.mov',
-    id: '3'
+    id: '3',
+    isFullscreen: false,
   }
 ]
 </script>
@@ -76,6 +82,10 @@ const videos = [
   height: 100vh;
   overflow: hidden;
   backface-visibility: hidden;
+}
+
+.parallax-video-container-fullscreen {
+  height: 110vh;
 }
 
 .parallax-video {
