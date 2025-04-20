@@ -53,15 +53,15 @@ onUnmounted(() => {
 
 const videos = [
   {
-    src: '/assets/video.mp4',
+    src: '/assets/ondo1.mov',
     id: '1'
   },
   {
-    src: '/assets/video2.mp4',
+    src: '/assets/ondo2.mov',
     id: '2'
   },
   {
-    src: '/assets/video.mp4',
+    src: '/assets/ondo3.mov',
     id: '3'
   }
 ]
