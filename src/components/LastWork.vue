@@ -4,7 +4,7 @@
       <h1 class="text-4xl font-bold">Últimos trabajos</h1>
     </div>
 
-    <div ref="lastWorkRef" class="relative z-10 bg-zinc-900 w-full p-5 md:p-10 flex flex-col justify-between">
+    <div ref="lastWorkRef" class="relative z-50 bg-zinc-900 w-full p-5 md:p-10 flex flex-col justify-between">
       <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 p-3 md:p-6">
         <div v-for="work in lastwork" :key="work.id"
              class="flex flex-col items-center p-4">

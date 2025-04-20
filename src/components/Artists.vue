@@ -3,7 +3,7 @@
     <div class="relative bg-transparent h-[50vh] w-full flex flex-col justify-center items-center">
       <h1 class="text-4xl font-bold">Artistas</h1>
     </div>
-    <div ref="artistRef" class="relative z-10 bg-zinc-900 w-full py-2 md:p-10">
+    <div ref="artistRef" class="relative z-50 bg-zinc-900 w-full py-2 md:p-10">
       <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
         <div v-for="artist in artists" :key="artist.id"
              class="flex flex-col items-center p-4">

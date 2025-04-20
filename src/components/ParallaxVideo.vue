@@ -18,33 +18,28 @@
 <script setup>
 import {onMounted, onUnmounted} from 'vue'
 
-let ticking = false;
-
 const handleScroll = () => {
-  if (!ticking) {
-    ticking = true;
-    requestAnimationFrame(() => {
-      videos.forEach((video) => {
-        const sectionElement = document.getElementById(`section-${video.id}`);
-        const videoElement = document.getElementById(`video-${video.id}`);
-        const playerElement = document.getElementById(`player-${video.id}`);
 
-        if (sectionElement && videoElement && playerElement) {
-          const rect = sectionElement.getBoundingClientRect();
-          const distanceFromTop = window.scrollY - sectionElement.offsetTop;
+  requestAnimationFrame(() => {
+    videos.forEach((video) => {
+      const sectionElement = document.getElementById(`section-${video.id}`);
+      const videoElement = document.getElementById(`video-${video.id}`);
+      const playerElement = document.getElementById(`player-${video.id}`);
 
-          if (rect.bottom < 0 || rect.top > window.innerHeight) {
-            videoElement.style.transform = `translate3d(0, -100%, 0)`;
-          } else {
-            videoElement.style.transform = `translate3d(0, ${-distanceFromTop}px, 0)`;
-          }
+      if (sectionElement && videoElement && playerElement) {
+        const rect = sectionElement.getBoundingClientRect();
+        const distanceFromTop = window.scrollY - sectionElement.offsetTop;
 
-          playerElement.style.transform = `translateY(${distanceFromTop * 0.8}px)`;
+        if (rect.bottom < 0 || rect.top > window.innerHeight) {
+          videoElement.style.transform = `translate3d(0, -100%, 0)`;
+        } else {
+          videoElement.style.transform = `translate3d(0, ${-distanceFromTop}px, 0)`;
         }
-      });
-      ticking = false;
+
+        playerElement.style.transform = `translateY(${distanceFromTop * 0.8}px)`;
+      }
     });
-  }
+  });
 };
 
 onMounted(() => {
@@ -80,7 +75,7 @@ const videos = [
   height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .parallax-video {
@@ -94,6 +89,5 @@ const videos = [
   pointer-events: none;
   display: block;
   object-fit: cover;
-  overflow: hidden;
 }
 </style>
