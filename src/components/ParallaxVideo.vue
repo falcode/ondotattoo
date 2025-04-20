@@ -33,10 +33,11 @@ const handleScroll = () => {
         if (rect.bottom < 0 || rect.top > window.innerHeight) {
           videoElement.style.transform = `translate3d(0, -100%, 0)`;
         } else {
-          videoElement.style.transform = `translate3d(0, ${-distanceFromTop}px, 0)`;
+          const translateY = Math.round(-distanceFromTop);
+          videoElement.style.transform = `translate3d(0, ${translateY}px, 0)`;
         }
-
-        playerElement.style.transform = `translateY(${distanceFromTop * 0.8}px)`;
+        const playerTranslateY = Math.round(distanceFromTop * 0.8);
+        playerElement.style.transform = `translateY(${playerTranslateY * 0.8}px)`;
       }
     });
   });
@@ -73,8 +74,7 @@ const videos = [
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   backface-visibility: hidden;
 }
 
