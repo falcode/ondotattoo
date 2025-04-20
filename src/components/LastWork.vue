@@ -1,7 +1,9 @@
 <template>
-  <SectionBanner title="Últimos trabajos" imgUrl="/assets/banner.png"
-                 imgAltText="Una persona siendo tatuada en Ondo Barcelona"/>
-  <div class="bg-zinc-900 w-full p-5 md:p-10 flex flex-col justify-between">
+  <Banner video-url="/assets/video2.mp4" :is-full-screen=false default-img="/assets/banner.png">
+    <h1 class="text-4xl font-bold">Últimos trabajos</h1>
+  </Banner>
+
+  <div ref="lastWorkRef" class="relative z-10 bg-zinc-900 w-full p-5 md:p-10 flex flex-col justify-between">
     <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 p-3 md:p-6">
       <div v-for="work in lastwork" :key="work.id"
            class="flex flex-col items-center p-4">
@@ -18,8 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import SectionBanner from "./SectionBanner.vue";
+import Banner from "./Banner.vue";
+import {ref} from "vue";
 
+const lastWorkRef = ref<HTMLElement | null>(null);
 const lastwork = [
   {
     id: 1,

@@ -1,5 +1,12 @@
 <template>
-  <div class="flex bg-zinc-900">
+  <Banner video-url="/assets/video.mp4" isFullScreen default-img="/assets/banner.png">
+    <h1 class="text-4xl font-bold">ONDO TATTOO BCN</h1>
+    <a href="https://maps.app.goo.gl/gLEj5FQRwAHTJ26y6" target="_blank">
+      <p class="mt-2 text-lg">CARRER DELS MORABOS 24 BARCELONA SPAIN</p>
+    </a>
+  </Banner>
+
+  <div ref="infoRef" class="relative z-50 flex bg-zinc-900">
     <div class="flex justify-between flex-wrap m-auto max-w-[960px] w-full p-10">
 
       <div class="flex flex-col p-5">
@@ -36,7 +43,10 @@
 </template>
 
 <script setup lang="ts">
+import Banner from "./Banner.vue";
+import {ref} from "vue";
 
+const infoRef = ref<HTMLElement | null>(null);
 </script>
 
 <style scoped>

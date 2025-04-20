@@ -9,8 +9,6 @@
   ],
   "compilerOptions": {
     "jsx": "preserve",
-    "types": [
-      "node"
-    ]
+    "types": ["vite/client"]
   }
 }

@@ -1,23 +1,47 @@
-<template>
-  <section class="relative w-full h-screen flex flex-col justify-center items-center text-center text-white">
-    <!-- SEO-friendly image -->
-    <img src="/assets/banner.png" alt="Banner description" class="absolute inset-0 w-full h-full object-cover"/>
+<script setup lang="ts">
+import {defineProps} from 'vue';
 
-    <!-- Content overlay -->
-    <div class="frosted-glass relative z-10 w-full h-full flex flex-col justify-center items-center">
-      <h1 class="text-4xl font-bold">ONDO TATTOO BCN</h1>
-      <a href="https://maps.app.goo.gl/gLEj5FQRwAHTJ26y6" target="_blank">
-        <p class="mt-2 text-lg">CARRER DELS MORABOS 24 BARCELONA SPAIN</p>
-      </a>
+const props = defineProps({
+  videoUrl: {
+    type: String,
+    required: true,
+  },
+  isFullScreen: {
+    type: Boolean,
+    default: false,
+  },
+  defaultImg: {
+    type: String,
+    default: '/assets/banner.png',
+  },
+});
+</script>
+
+<template>
+  <section
+      :class="`relative w-full overflow-hidden ${isFullScreen ? 'h-screen' : 'h-[50vh]'} flex flex-col justify-center items-center text-center text-white`"
+  >
+    <!-- Background video with fallback image -->
+    <div class="absolute top-0 left-0 w-full h-full z-0">
+      <video
+          class="w-full h-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+      >
+        <source :src="videoUrl" type="video/mp4"/>
+        <img :src="defaultImg" alt="Fallback image" class="w-full h-full object-cover"/>
+      </video>
+    </div>
+
+    <!-- Foreground content -->
+    <div class="relative z-10 w-full h-full flex flex-col justify-center items-center">
+      <slot/>
     </div>
   </section>
 </template>
 
 <style scoped>
-.frosted-glass {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 20px;
-}
+/* Optional: fade effect or parallax illusion can be added here */
 </style>

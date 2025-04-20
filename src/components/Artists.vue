@@ -1,6 +1,8 @@
 <template>
-  <SectionBanner title="Artistas" imgUrl="/assets/banner.png" imgAltText="Los tatuadores de Ondo Barcelona"/>
-  <div class="bg-zinc-900 w-full py-2 md:p-10">
+  <Banner video-url="/assets/video.mp4" :is-full-screen="false" default-img="/assets/banner.png">
+    <h1 class="text-4xl font-bold">Artistas</h1>
+  </Banner>
+  <div ref="artistRef" class="relative z-10 bg-zinc-900 w-full py-2 md:p-10">
     <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
       <div v-for="artist in artists" :key="artist.id"
            class="flex flex-col items-center p-4">
@@ -17,7 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import SectionBanner from "./SectionBanner.vue";
+import Banner from "./Banner.vue";
+import {ref} from "vue";
+
+const artistRef = ref<HTMLElement | null>(null);
 
 const artists = [
   {

@@ -1,7 +1,6 @@
 ---
 import Navbar from "../components/Navbar.vue";
 import LastWork from "../components/LastWork.vue";
-import Banner from "../components/Banner.vue";
 import Artists from "../components/Artists.vue";
 import Info from "../components/Info.vue";
 import '../styles/global.css';
@@ -21,11 +20,10 @@ import '../styles/global.css';
     <title>ONDO TATTOO BARCELONA</title>
 </head>
 <body>
-<Navbar client:load/>
-<Banner/>
-<Info/>
-<LastWork/>
-<Artists/>
+<Navbar/>
+<Info client:visible/>
+<LastWork client:visible/>
+<Artists client:visible/>
 <slot/>
 </body>
 </html>
