@@ -1,25 +1,26 @@
 <template>
-  <Banner video-url="/assets/video.mp4" :is-full-screen="false" default-img="/assets/banner.png">
-    <h1 class="text-4xl font-bold">Artistas</h1>
-  </Banner>
-  <div ref="artistRef" class="relative z-10 bg-zinc-900 w-full py-2 md:p-10">
-    <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
-      <div v-for="artist in artists" :key="artist.id"
-           class="flex flex-col items-center p-4">
-        <img src="/favicon.png" alt="Artist Image" class="w-[215px] h-[215px] object-contain mb-4">
-        <h2 class="text-xl font-bold text-white mb-2">{{ artist.name }}</h2>
-        <p class="text-gray-400 text-center mb-4">{{ artist.description }}</p>
-        <a :href="artist.instagram" target="_blank" rel="noopener noreferrer"
-           class="border-2 border-white text-white hover:text-zinc-900 px-4 py-2 hover:bg-white">
-          Instagram
-        </a>
+  <section id="section-3">
+    <div class="relative bg-transparent h-[50vh] w-full flex flex-col justify-center items-center">
+      <h1 class="text-4xl font-bold">Artistas</h1>
+    </div>
+    <div ref="artistRef" class="relative z-10 bg-zinc-900 w-full py-2 md:p-10">
+      <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+        <div v-for="artist in artists" :key="artist.id"
+             class="flex flex-col items-center p-4">
+          <img src="/favicon.png" alt="Artist Image" class="w-[215px] h-[215px] object-contain mb-4">
+          <h2 class="text-xl font-bold text-white mb-2">{{ artist.name }}</h2>
+          <p class="text-gray-400 text-center mb-4">{{ artist.description }}</p>
+          <a :href="artist.instagram" target="_blank" rel="noopener noreferrer"
+             class="border-2 border-white text-white hover:text-zinc-900 px-4 py-2 hover:bg-white">
+            Instagram
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import Banner from "./Banner.vue";
 import {ref} from "vue";
 
 const artistRef = ref<HTMLElement | null>(null);

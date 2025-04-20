@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.vue";
 import LastWork from "../components/LastWork.vue";
 import Artists from "../components/Artists.vue";
 import Info from "../components/Info.vue";
+import ParallaxVideo from "../components/ParallaxVideo.vue";
 import '../styles/global.css';
 ---
 
@@ -21,9 +22,10 @@ import '../styles/global.css';
 </head>
 <body>
 <Navbar/>
-<Info client:visible/>
-<LastWork client:visible/>
-<Artists client:visible/>
+<ParallaxVideo client:visible/>
+<Info/>
+<LastWork/>
+<Artists/>
 <slot/>
 </body>
 </html>
