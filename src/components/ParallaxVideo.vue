@@ -35,8 +35,7 @@ const handleScroll = () => {
           videoElement.style.transform = `translate3d(0, -100%, 0)`;
         } else {
           let translateY = Math.round(-distanceFromTop);
-          console.log(video.id)
-          translateY += video.id === '1' ? 0 : -50;
+          translateY += video.id === '1' ? 0 : -100;
           videoElement.style.transform = `translate3d(0, ${translateY}px, 0)`;
         }
         const playerTranslateY = Math.round(distanceFromTop * 0.8);
@@ -69,7 +68,12 @@ const videos = [
     src: '/assets/ondo3.mov',
     id: '3',
     isFullscreen: false,
-  }
+  },
+  {
+    src: '/assets/ondo1.mov',
+    id: '4',
+    isFullscreen: true
+  },
 ]
 </script>
 
