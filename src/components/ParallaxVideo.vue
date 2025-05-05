@@ -1,4 +1,3 @@
-<!-- src/components/ParallaxVideo.vue -->
 <template>
   <template v-for="video in videos">
     <div :id="`video-${video.id}`"

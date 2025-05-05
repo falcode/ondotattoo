@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html, body {
+    background-color: #18181b;
+}
+
 h1, h2, h3, h4, span, p, a, button {
     font-family: "Bebas Neue", sans-serif;
     font-optical-sizing: auto;
