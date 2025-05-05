@@ -11,7 +11,7 @@ h1, h2, h3, h4, span, p, a, button {
 }
 
 h1 {
-    font-size: 6em;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: 13px;
     color: white;
@@ -31,4 +31,18 @@ p {
     white-space: preserve;
     font-size: 13px;
     color: rgb(168, 168, 168)
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
 }

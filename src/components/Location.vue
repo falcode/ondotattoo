@@ -1,7 +1,7 @@
 <template>
   <section id="section-4" class="p-5 md:p-10">
     <div class="relative bg-transparent h-[40vh] w-full flex flex-col justify-center items-center">
-      <h1 class="xs:text-2xl text-4xl font-bold">Localización</h1>
+      <h1 class="font-bold">Localización</h1>
     </div>
     <div class="relative z-50 map-container h-[450px]  w-full flex justify-center align-center">
       <iframe

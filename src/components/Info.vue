@@ -1,7 +1,11 @@
 <template>
   <section id="section-1">
     <div class="relative bg-transparent h-screen w-full flex flex-col justify-center items-center">
-      <h1 class="text-4xl font-bold">ONDO TATTOO BCN</h1>
+      <h1 class="text-center font-bold flex flex-col md:flex-row gap-4 mb-4 md:mb-0">
+        <span>ONDO</span>
+        <span>TATTOO</span>
+        <span>BCN</span>
+      </h1>
       <a href="https://maps.app.goo.gl/gLEj5FQRwAHTJ26y6" target="_blank">
         <p class="mt-2 text-lg">CARRER DELS MORABOS 24 BARCELONA SPAIN</p>
       </a>
