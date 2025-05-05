@@ -4,7 +4,7 @@
       <h1 class="text-4xl font-bold">Artistas</h1>
     </div>
     <div ref="artistRef" class="relative z-50 bg-zinc-900 w-full py-2 md:p-10">
-      <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+      <div class="max-w-[960px] m-auto grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
         <div v-for="artist in artists" :key="artist.id"
              class="flex flex-col items-center p-4">
           <img src="/favicon.png" alt="Artist Image" class="w-[215px] h-[215px] object-contain mb-4">
