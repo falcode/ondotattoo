@@ -25,12 +25,19 @@ h2 {
     color: rgb(194, 194, 194);
 }
 
-p {
+p, li {
     font-family: monospace;
     letter-spacing: 1px;
     white-space: preserve;
     font-size: 13px;
-    color: rgb(168, 168, 168)
+    color: rgb(168, 168, 168);
+    margin-bottom: 8px;
+}
+
+li {
+    list-style: disc;
+    list-style-position: inside;
+    margin: 0 2px;
 }
 
 /* Tablets */
