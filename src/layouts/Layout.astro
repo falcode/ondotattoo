@@ -3,8 +3,9 @@ import Navbar from "../components/Navbar.vue";
 import LastWork from "../components/LastWork.vue";
 import Info from "../components/Info.vue";
 import Location from "../components/Location.vue";
+import Footer from "../components/Footer.vue";
 import ParallaxVideo from "../components/ParallaxVideo.vue";
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -31,9 +32,12 @@ import '../styles/global.css';
 
     <!-- Favicon & Tipografías -->
     <link rel="icon" type="image/png" href="/favicon.png"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap"
+            rel="stylesheet"
+    />
 
     <!-- Astro -->
     <meta name="generator" content={Astro.generator}/>
@@ -45,6 +49,7 @@ import '../styles/global.css';
 <LastWork/>
 <!--<Artists/>-->
 <Location/>
+<Footer client:load/>
 <slot/>
 </body>
 </html>

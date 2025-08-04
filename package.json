@@ -12,6 +12,8 @@
     "@astrojs/vue": "^5.0.7",
     "@tailwindcss/vite": "^4.0.14",
     "astro": "^5.5.3",
+    "lucide-vue-next": "^0.534.0",
+    "simple-icons": "^15.8.0",
     "tailwindcss": "^4.0.14",
     "vue": "^3.5.13"
   },
