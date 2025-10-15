@@ -1,0 +1,88 @@
+---
+import Navbar from "../../components/Navbar.vue";
+import Footer from "../../components/Footer.vue";
+import ParallaxVideo from "../../components/ParallaxVideo.vue";
+import Heal from "../../components/Heal.vue";
+import "../../styles/global.css";
+const videos = [
+  {
+    src: "/assets/ondo1.mov",
+    id: "1",
+    isFullscreen: false,
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- SEO Básico -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <title>Ondo Tattoo Barcelona – Cómo curar tu tatuaje</title>
+
+    <!-- Open Graph para Facebook y otros -->
+    <meta
+      property="og:title"
+      content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona"
+    />
+    <meta
+      property="og:description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ondotattoo.com" />
+    <meta
+      property="og:image"
+      content="https://ondotattoo.com/images/og-cover.jpg"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona"
+    />
+    <meta
+      name="twitter:description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ondotattoo.com/images/og-cover.jpg"
+    />
+
+    <!-- Favicon & Tipografías -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Astro -->
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <Navbar />
+    <ParallaxVideo client:load videos={videos} />
+    <Heal client:load />
+    <Footer client:load />
+    <slot />
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
