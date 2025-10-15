@@ -1,27 +1,30 @@
 <template>
-  <template v-for="video in videos">
+  <template v-for="video in props.videos">
     <div :id="`video-${video.id}`"
-         :class="`parallax-video-container ${video.isFullscreen ? 'parallax-video-container-fullscreen' : ''}`">
-      <video
-          :id="`player-${video.id}`"
-          :src="video.src"
-          :autoplay="true"
-          :loop="true"
-          :muted="true"
-          playsinline
-          class="parallax-video"
-      ></video>
+      :class="`parallax-video-container ${video.isFullscreen ? 'parallax-video-container-fullscreen' : ''}`">
+      <video :id="`player-${video.id}`" :src="video.src" :autoplay="true" :loop="true" :muted="true" playsinline
+        class="parallax-video"></video>
     </div>
   </template>
 </template>
 
-<script setup>
-import {onMounted, onUnmounted} from 'vue'
+<script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+
+interface Video {
+  src: string;
+  id: string;
+  isFullscreen: boolean;
+}
+
+const props = defineProps < {
+  videos: Video[]
+} > ();
 
 const handleScroll = () => {
 
   requestAnimationFrame(() => {
-    videos.forEach((video) => {
+    props.videos.forEach((video) => {
       const sectionElement = document.getElementById(`section-${video.id}`);
       const videoElement = document.getElementById(`video-${video.id}`);
       const playerElement = document.getElementById(`player-${video.id}`);
@@ -45,35 +48,12 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll, {passive: true});
+  window.addEventListener('scroll', handleScroll, { passive: true });
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
-
-const videos = [
-  {
-    src: '/assets/ondo1.mov',
-    id: '1',
-    isFullscreen: true
-  },
-  {
-    src: '/assets/ondo2.mov',
-    id: '2',
-    isFullscreen: false
-  },
-  {
-    src: '/assets/ondo3.mov',
-    id: '3',
-    isFullscreen: false,
-  },
-  {
-    src: '/assets/ondo1.mov',
-    id: '4',
-    isFullscreen: true
-  },
-]
 </script>
 
 <style scoped>

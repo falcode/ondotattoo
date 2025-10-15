@@ -10,6 +10,10 @@ h1, h2, h3, h4, span, p, a, button {
     font-style: normal;
 }
 
+h3 {
+    letter-spacing: 1px;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 400;

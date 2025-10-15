@@ -6,62 +6,105 @@ import Location from "../components/Location.vue";
 import Footer from "../components/Footer.vue";
 import ParallaxVideo from "../components/ParallaxVideo.vue";
 import "../styles/global.css";
+
+const videos = [
+  {
+    src: "/assets/ondo1.mov",
+    id: "1",
+    isFullscreen: true,
+  },
+  {
+    src: "/assets/ondo2.mov",
+    id: "2",
+    isFullscreen: false,
+  },
+  {
+    src: "/assets/ondo3.mov",
+    id: "3",
+    isFullscreen: false,
+  },
+  {
+    src: "/assets/ondo1.mov",
+    id: "4",
+    isFullscreen: true,
+  },
+];
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="es">
+  <head>
     <!-- SEO Básico -->
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!">
-    <title>Ondo Tattoo Barcelona – Estudio de Tatuajes Profesional en el Centro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <title>
+      Ondo Tattoo Barcelona – Estudio de Tatuajes Profesional en el Centro
+    </title>
 
     <!-- Open Graph para Facebook y otros -->
-    <meta property="og:title" content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona">
-    <meta property="og:description"
-          content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ondotattoo.com">
-    <meta property="og:image" content="https://ondotattoo.com/images/og-cover.jpg">
+    <meta
+      property="og:title"
+      content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona"
+    />
+    <meta
+      property="og:description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ondotattoo.com" />
+    <meta
+      property="og:image"
+      content="https://ondotattoo.com/images/og-cover.jpg"
+    />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona">
-    <meta name="twitter:description"
-          content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!">
-    <meta name="twitter:image" content="https://ondotattoo.com/images/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ondo Tattoo: Tattoo Barcelona | Tatuajes Barcelona"
+    />
+    <meta
+      name="twitter:description"
+      content="¿Buscas un tattoo en Barcelona? Descubre el mejor estudio de tatuajes en Barcelona. Diseños únicos, artistas expertos y calidad garantizada. ¡Reserva tu cita ahora!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ondotattoo.com/images/og-cover.jpg"
+    />
 
     <!-- Favicon & Tipografías -->
-    <link rel="icon" type="image/png" href="/favicon.png"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-            href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Work+Sans:ital,wght@0,342;1,342&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Astro -->
-    <meta name="generator" content={Astro.generator}/>
-</head>
-<body>
-<Navbar/>
-<ParallaxVideo client:load/>
-<Info/>
-<LastWork/>
-<!--<Artists/>-->
-<Location/>
-<Footer client:load/>
-<slot/>
-</body>
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <Navbar />
+    <ParallaxVideo client:load videos={videos} />
+    <Info />
+    <LastWork />
+    <!--<Artists/>-->
+    <Location />
+    <Footer client:load />
+    <slot />
+  </body>
 </html>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-    }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
