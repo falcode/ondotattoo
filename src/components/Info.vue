@@ -59,6 +59,7 @@
                 instrucciones personalizadas después de tu sesión.</p>
               <p>Pero lo básico para todas las tatuajes es no exponer la zona tatuada al sol, evitar la inmersión en
                 agua (piscina, mar, etc.) y no ir a saunas durante minimo de dos 2 semanas.</p>
+              <p><a href="/cuidados">Mas info aquí</a></p>
             </span>
           </div>
         </div>
