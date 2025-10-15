@@ -40,8 +40,6 @@
               <h3 class="text-lg font-bold text-white mt-4 mb-2">6. No rasques, no arranques</h3>
               <p>Aunque dé gustito. No lo hagas. Las costras y pieles tienen que caer solas. Arrancarlas = fastidiar el
                 dibujo.</p>
-
-
             </span>
           </div>
         </div>
