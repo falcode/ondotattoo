@@ -1,20 +1,22 @@
 <template>
   <section id="section-1">
     <div class="relative bg-transparent h-screen w-full flex flex-col justify-center items-center">
-      <h1 class="text-center font-bold flex flex-col md:flex-row gap-4 mb-4 md:mb-0">
+      <h1 class="text-center font-bold flex flex-col md:flex-row gap-4 pt-50% pb-8 md:mb-0">
         <span>¿CÓMO CUIDO MI NUEVO TATUAJE?</span>
       </h1>
+      <p class="text-center !text-white mx-[10%] pb-8">Te acabas de llevar una obra de arte en la piel. Ahora toca lo
+        más
+        importante: que cicatrice bien para que luzca como merece. No es complicado, solo hay que seguir unas cuantas
+        reglas básicas.</p>
+      <CircleChevronDown class="text-[#c2c2c2] w-8 h-8 cursor-pointer" @click="scrollDown()" />
     </div>
 
-    <div ref="infoRef" class="relative z-50 flex bg-zinc-900">
+    <div id="heal" ref="healRef" class="relative z-50 flex bg-zinc-900">
       <div class="flex flex-col md:flex-row max-w-7xl m-auto px-10 py-16 gap-6">
         <!-- COLUMN 1 -->
         <div class="flex flex-col gap-6">
           <div class="flex flex-col">
             <span>
-              <p>Te acabas de llevar una obra de arte en la piel. Ahora toca lo más importante: que cicatrice bien para
-                que luzca como merece. No es complicado, solo hay que seguir unas cuantas reglas básicas.</p>
-
               <h3 class="text-lg font-bold text-white mt-4 mb-2">1. No toques el tatuaje (sí, aunque tengas curiosidad)
               </h3>
               <p>Las manos sucias y los tatuajes recién hechos no son amigos. Ropa holgada, nada de estar sobando la
@@ -66,7 +68,9 @@
               y el resultado será precioso.</p>
 
             <h3 class="text-lg font-bold text-white mt-6 mb-2">Y ahora, un último detalle:</h3>
-            <p>Si te ha gustado la experiencia, deja una reseña que es gratuito. No necesitas escribir poesía: un par
+            <p>Si te ha gustado la experiencia, <a
+                href="https://www.google.com/maps/place/Ondo+Tattoo+Barcelona/@41.3709918,2.1465088,1723m/data=!3m1!1e3!4m8!3m7!1s0x12a4a27758e88cab:0x88679085114a4592!8m2!3d41.3709918!4d2.1490837!9m1!1b1!16s%2Fg%2F11b6r09k6b?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank">deja una reseña</a> que es gratuito. No necesitas escribir poesía: un par
               de líneas sinceras valen oro… y si además quieres añadir una foto de tu tattoo o del estudio, todavía
               mejor.</p>
 
@@ -88,8 +92,17 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { CircleChevronDown } from 'lucide-vue-next';
 
-const infoRef = ref<HTMLElement | null>(null);
+const healRef = ref<HTMLElement | null>(null);
+const scrollDown = () => {
+  if (healRef.value) {
+    healRef.value.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 </script>
 
 <style scoped></style>
